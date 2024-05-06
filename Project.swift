@@ -1,22 +1,22 @@
 import ProjectDescription
 
 let project = Project(
-    name: "AnalyticsXFirebase",
+    name: "BugDemo",
     targets: [
         .target(
-            name: "AnalyticsXFirebase",
+            name: "BugDemo",
             destinations: .iOS,
             product: .app,
-            bundleId: "io.tuist.AnalyticsXFirebase",
+            bundleId: "io.tuist.BugDemo",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
                 ]
             ),
-            sources: ["AnalyticsXFirebase/Sources/**"],
-            resources: ["AnalyticsXFirebase/Resources/**"],
+            sources: ["BugDemo/Sources/**"],
+            resources: ["BugDemo/Resources/**"],
             dependencies: [
-                .project(target: "Framework1", path: "MyFrameworks"),
+                .project(target: "DependenciesWithFirebaseIncluded", path: "TestProject"),
             ]
         )
     ]

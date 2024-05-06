@@ -1,34 +1,34 @@
 import ProjectDescription
 
 let project = Project(
-    name: "MyFrameworks",
+    name: "TestProject",
     packages: [
-        .package(path: "../PackageXFirebase"),
+        .package(path: "../PackageContainingFirebase"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.23.0"),
     ],
     targets: [
         .target(
-            name: "Framework1",
+            name: "DependenciesWithFirebaseIncluded",
             destinations: .iOS,
             product: .framework,
-            bundleId: "io.tuist.framework1",
+            bundleId: "io.tuist.DependenciesWithFirebaseIncluded",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
                 ]
             ),
-            sources: ["Framework1/Sources/**"],
-            resources: ["Framework1/Resources/**"],
+            sources: ["DependenciesWithFirebaseIncluded/Sources/**"],
+            resources: ["DependenciesWithFirebaseIncluded/Resources/**"],
             dependencies: [
-                .target(name: "Framework2"),
-                .package(product: "PackageXFirebase"),
+                .target(name: "TargetContainingFirebase"),
+                .package(product: "PackageContainingFirebase"),
             ]
         ),
         .target(
-            name: "Framework2",
+            name: "TargetContainingFirebase",
             destinations: .iOS,
             product: .framework,
-            bundleId: "io.tuist.Module.framework2",
+            bundleId: "io.tuist.Module.TargetContainingFirebase",
             dependencies: [
                 .package(product: "FirebaseAnalytics"),
             ]
