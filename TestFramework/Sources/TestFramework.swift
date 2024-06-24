@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct AnalyticsXFirebaseApp: App {
+struct TestFramework: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
