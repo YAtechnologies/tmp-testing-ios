@@ -7,10 +7,10 @@ let project = Project(
     ],
     targets: [
         .target(
-            name: "TargetContainingFirebase",
+            name: "TestFramework",
             destinations: .iOS,
             product: .framework,
-            bundleId: "io.tuist.Module.TargetContainingFirebase",
+            bundleId: "io.tuist.Module.TestFramework",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",

@@ -9,8 +9,8 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "TargetContainingFirebase",
-            targets: ["TargetContainingFirebase"]
+            name: "TestFramework",
+            targets: ["TestFramework"]
         )
     ],
     dependencies: [
@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TargetContainingFirebase",
+            name: "TestFramework",
             dependencies: [
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk")
             ],
