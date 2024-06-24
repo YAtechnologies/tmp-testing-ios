@@ -11,9 +11,21 @@ let project = Project(
             destinations: .iOS,
             product: .framework,
             bundleId: "io.tuist.Module.TargetContainingFirebase",
+            infoPlist: .extendingDefault(
+                with: [
+                    "UILaunchStoryboardName": "LaunchScreen.storyboard",
+                ]
+            ),
+            sources: ["TestFramework/Sources/**"],
+            resources: ["TestFramework/Resources/**"],
             dependencies: [
-                .package(product: "FirebaseAnalytics"),
-            ]
+                .package(product: "FirebaseAnalytics")
+            ],
+            settings: .settings(
+                base: ["OTHER_LDFLAGS": "$(inherited) -ObjC"]
+                ,
+                defaultSettings: .recommended
+            )
         )
     ]
 )
