@@ -1,22 +1,18 @@
 import ProjectDescription
 
 let project = Project(
-    name: "BugDemo",
+    name: "TestFramework",
+    packages: [
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.23.0"),
+    ],
     targets: [
         .target(
-            name: "BugDemo",
+            name: "TargetContainingFirebase",
             destinations: .iOS,
-            product: .app,
-            bundleId: "io.tuist.BugDemo",
-            infoPlist: .extendingDefault(
-                with: [
-                    "UILaunchStoryboardName": "LaunchScreen.storyboard",
-                ]
-            ),
-            sources: ["BugDemo/Sources/**"],
-            resources: ["BugDemo/Resources/**"],
+            product: .framework,
+            bundleId: "io.tuist.Module.TargetContainingFirebase",
             dependencies: [
-                .project(target: "DependenciesWithFirebaseIncluded", path: "TestProject"),
+                .package(product: "FirebaseAnalytics"),
             ]
         )
     ]
