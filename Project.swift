@@ -11,11 +11,6 @@ let project = Project(
             destinations: .iOS,
             product: .framework,
             bundleId: "io.tuist.Module.TestFramework",
-            infoPlist: .extendingDefault(
-                with: [
-                    "UILaunchStoryboardName": "LaunchScreen.storyboard",
-                ]
-            ),
             sources: ["TestFramework/Sources/**"],
             resources: ["TestFramework/Resources/**"],
             dependencies: [
