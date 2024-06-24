@@ -13,6 +13,7 @@ let project = Project(
             bundleId: "io.tuist.Module.TestFramework",
             sources: ["TestFramework/Sources/**"],
             resources: ["TestFramework/Resources/**"],
+            headers: .headers(public: ["TestFramework.h"]),
             dependencies: [
                 .package(product: "FirebaseAnalytics")
             ],
