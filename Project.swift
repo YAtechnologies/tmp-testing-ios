@@ -16,12 +16,7 @@ let project = Project(
             headers: .headers(public: ["TestFramework.h"]),
             dependencies: [
                 .package(product: "FirebaseAnalytics")
-            ],
-            settings: .settings(
-                base: ["OTHER_LDFLAGS": "$(inherited) -ObjC"]
-                ,
-                defaultSettings: .recommended
-            )
+            ]
         )
     ]
 )
