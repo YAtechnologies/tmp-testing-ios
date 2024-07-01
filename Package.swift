@@ -24,11 +24,11 @@ let package = Package(
             ],
             path: "TestFramework",
             sources: [
-                "TestFramework/Sources"
+                "Sources"
             ]
             ,
             resources: [
-                .process("TestFramework/Resources")
+                .process("Resources")
             ]
         )
     ]
